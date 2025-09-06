@@ -148,6 +148,10 @@ document.getElementById("btn-search").addEventListener("click", () => {
   removeActiveClass();
   const input = document.getElementById("input-search");
   const searchValue = input.value.trim().toLowerCase();
+  if (!searchValue) {
+    // Do not search if input is empty
+    return;
+  }
   // searchVocabulary(query);
   console.log(searchValue);
   fetch(`https://openapi.programming-hero.com/api/words/all`)
